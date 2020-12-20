@@ -46,6 +46,8 @@ int main(int ac, char **av)
 		line_n++;
 		vars.line = remove_new_line(vars.line);
 		opcode = strtok(vars.line, " ");
+		if (opcode[0] == '#')
+			continue;
 		if (opcode)
 			get_monty_code(&head, opcode, line_n);
 	}
