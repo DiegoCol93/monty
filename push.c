@@ -21,7 +21,7 @@
  */
 void push(stack_t **head, unsigned int line_n)
 {
-	stack_t *new_node = NULL, *current = NULL;
+	stack_t *new_node = NULL, *top = NULL;
 	char *data;
 	int n;
 
@@ -41,8 +41,8 @@ void push(stack_t **head, unsigned int line_n)
 	{
 		if (*head)
 		{
-			current = *head;
-			current->prev = new_node;
+			top = *head;
+			top->prev = new_node;
 		}
 		new_node->next = *head;
 		*head = new_node;
