@@ -72,6 +72,18 @@ void added(stack_t **head, unsigned int line_n);
 /*   _nope - Does not do anything.                                           */
 void _nope(stack_t **head, unsigned int line_n);
 
+/*   _subs - Substracts the top two elements on the stack.                   */
+void _subs(stack_t **head, unsigned int line_n);
+
+/*   divis - Divides the top two element on the stack.                       */
+void divis(stack_t **head, unsigned int line_n);
+
+/*   multi - Multiplies the top two elements on the stack.                   */
+void multi(stack_t **head, unsigned int line_n);
+
+/*   modul - Modulus operation of the top two elements on the stack.         */
+void modul(stack_t **head, unsigned int line_n);
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         Main auxiliary functions.                         */
 /*---------------------------------------------------------------------------*/
