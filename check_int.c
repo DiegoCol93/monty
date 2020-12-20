@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * check_int     - Pushes a node into a doubly linked list stack.
+ * check_int     - Checks if a string only has numbers.
  *
  *   Arguments:
  *     @data:    - String with data argument.
