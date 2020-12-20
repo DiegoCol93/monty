@@ -32,6 +32,10 @@ void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 		{"swap", swap},
 		{"add", added},
 		{"nop", _nope},
+		{"sub", _subs},
+		{"div", divis},
+		{"mul", multi},
+		{"mod", modul},
 		{NULL, NULL}
 	};
 
