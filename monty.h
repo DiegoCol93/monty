@@ -95,6 +95,9 @@ void modul(stack_t **head, unsigned int line_n);
 /*   pchar - Prints value on the top of the stack as one char in ascci.      */
 void pch(stack_t **head, unsigned int line_n);
 
+/*   pstr - Prints value on the top of the stack as one char in ascci.      */
+void pstr(stack_t **head, unsigned int line_n);
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         Main auxiliary functions.                         */
 /*---------------------------------------------------------------------------*/
