@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- *   pchar - Prints value on the top of the stack as one char in ascci.
+ * pch - Prints value on the top of the stack as one char in ascci.
  *
  *    Arguments:
  *      @head:    - Pointer, received by reference, of head of list.
