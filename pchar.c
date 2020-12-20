@@ -1,11 +1,9 @@
 #include "monty.h"
 /**
- * get_monty_code - Gets the correct function based on the opcode cmd.
+ *   pchar - Prints value on the top of the stack as one char in ascci.
  *
  *    Arguments:
  *      @head:    - Pointer, received by reference, of head of list.
- *    @opcode_s:  - String of the op code, command received
- *                  from the line read.
  *     @line_n:   - Number of line being read.
  *
  *               _____   __  ______  ______  ______
