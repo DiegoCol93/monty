@@ -89,6 +89,13 @@ void multi(stack_t **head, unsigned int line_n);
 void modul(stack_t **head, unsigned int line_n);
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*                          Text handling functions.                         */
+/*---------------------------------------------------------------------------*/
+
+/*   pchar - Prints value on the top of the stack as one char in ascci.      */
+void pch(stack_t **head, unsigned int line_n);
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         Main auxiliary functions.                         */
 /*---------------------------------------------------------------------------*/
 
