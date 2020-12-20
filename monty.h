@@ -60,6 +60,18 @@ void pall(stack_t **head, unsigned int line_n);
 /*   pint - Prints the top of the stack.                                     */
 void pint(stack_t **head, unsigned int line_n);
 
+/*   pop_h - Pops the top element of the stack.                              */
+void pop_h(stack_t **head, unsigned int line_n);
+
+/*   swap - Swaps the top two elements on the stack.                         */
+void swap(stack_t **head, unsigned int line_n);
+
+/*   added - Adds the top two elements on the stack.                         */
+void added(stack_t **head, unsigned int line_n);
+
+/*   _nope - Does not do anything.                                           */
+void _nope(stack_t **head, unsigned int line_n);
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                         Main auxiliary functions.                         */
 /*---------------------------------------------------------------------------*/
