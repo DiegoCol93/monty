@@ -23,12 +23,17 @@
  */
 void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 {
+	unsigned short int i = 0;
 	instruction_t op[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop_h},
+		{"swap", swap},
+		{"add", added},
+		{"nop", _nope},
 		{NULL, NULL}
 	};
-	int i = 0;
 
 	while (op[i].opcode)
 	{
