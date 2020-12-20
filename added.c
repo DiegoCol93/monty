@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * added - Adds the top two elements on the stack and
- *       pops the top element.
+ *         pops the top element.
  *
  *   Arguments:
  *     @head:    - Pointer head of the list.
@@ -32,7 +32,7 @@ void added(stack_t **head, unsigned int line_n)
 			line_n);
 		exit(EXIT_FAILURE);
 	}
-	top->next->n = top->n + top->next->n;
+	top->next->n = top->next->n + top->n;
 	*head = top->next;
 	free(top);
 }
