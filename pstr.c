@@ -29,7 +29,7 @@ void pstr(stack_t **head, unsigned int line_n)
 	top = *head;
 	if (top)
 	{
-		while(top)
+		while (top)
 		{
 			if (top->n <= 0 || top->n > 127)
 			{
