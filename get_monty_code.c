@@ -27,7 +27,8 @@ void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 	instruction_t op[] = {
 		{"push", push}, {"pall", pall},	{"pint", pint},	{"pop", pop_h},
 		{"swap", swap},	{"add", added},	{"nop", _nope},	{"sub", _subs},
-		{"div", divis},	{"mul", multi},	{"mod", modul},	{NULL, NULL}
+		{"div", divis},	{"mul", multi},	{"mod", modul}, {"pchar", pch},
+		{NULL, NULL}
 	};
 
 	while (op[i].opcode)
