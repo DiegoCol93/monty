@@ -21,7 +21,6 @@
  */
 void pall(stack_t **head, unsigned int line_n)
 {
-
 	stack_t *current = NULL;
 	(void)line_n;
 
