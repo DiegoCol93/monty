@@ -21,13 +21,13 @@
  */
 void pall(stack_t **head, unsigned int line_n)
 {
-	stack_t *current = NULL;
+	stack_t *top = NULL;
 	(void)line_n;
 
-	current = *head;
-	while (current)
+	top = *head;
+	while (top)
 	{
-		printf("%d\n", current->n);
-		current = current->next;
+		printf("%d\n", top->n);
+		top = top->next;
 	}
 }
