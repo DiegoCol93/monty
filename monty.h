@@ -75,7 +75,7 @@ void _nope(stack_t **head, unsigned int line_n);
 /*   _subs - Substracts the top two elements on the stack.                   */
 void _subs(stack_t **head, unsigned int line_n);
 
-/*   divis - Divides the top two element on the stack.                       */
+/*   divis - Divides the top two elements on the stack.                      */
 void divis(stack_t **head, unsigned int line_n);
 
 /*   multi - Multiplies the top two elements on the stack.                   */
