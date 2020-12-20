@@ -28,11 +28,15 @@ void push(stack_t **head, unsigned int line_n)
 	(void)line_n;
 
 	data = strtok(NULL, " ");
-	n =  check_int(data, line_n);
+	n =  check_int(data, line_n, head);
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
 	{
 		fprintf(stderr, "\033[31mError: malloc failed\033[0m\n");
+		free(vars.line);
+		fclose(vars.file_stream);
+		if (*head || head)
+			free_list(head);
 		exit(1);/* Error if no malloc */
 	}
 	new_node->n = n;

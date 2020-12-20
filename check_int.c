@@ -5,6 +5,7 @@
  *   Arguments:
  *     @data:    - String with data argument.
  *    @line_n:   - Command line.
+ *     @head:    - Pointer to head of list.
  *
  *     Return:   - Integer data if no error found.
  *
@@ -21,7 +22,7 @@
  *
  *                         Dec-2020
  */
-int check_int(char *data, unsigned int line_n)
+int check_int(char *data, unsigned int line_n, stack_t **head)
 {
 	int ret = 0, i = 0;
 
@@ -36,6 +37,10 @@ int check_int(char *data, unsigned int line_n)
 				fprintf(stderr,
 					"\033[31mL%d: usage: push integer\033[0m\n",
 					line_n);
+				free(vars.line);
+				fclose(vars.file_stream);
+				if (*head || head)
+					free_list(head);
 				exit(EXIT_FAILURE);
 			}
 			i++;

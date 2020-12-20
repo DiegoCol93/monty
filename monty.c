@@ -22,32 +22,35 @@
  */
 int main(int ac, char **av)
 {
-	char *line = NULL, *opcode = NULL;
 	unsigned int line_n = 0;
 	stack_t *head = NULL;
-	FILE *file_stream;
+	char *opcode = NULL;
 	size_t n;
 
+	vars.file_stream = NULL;
+	vars.line = NULL;
 	if (ac != 2) /* If not correct # of args. */
 	{
 		fprintf(stderr, "\033[31mUSAGE: monty file\033[0m\n");
 		exit(EXIT_FAILURE);
 	}
-	file_stream = fopen(av[1], "r"); /* Opens FILE stream. */
-	if (!file_stream)
+	vars.file_stream = fopen(av[1], "r"); /* Opens FILE stream. */
+	if (!vars.file_stream)
 	{
 		fprintf(stderr, "\033[31mError: Can't open file %s\033[0m\n",
 			av[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line, &n, file_stream) != -1)
+	while (getline(&vars.line, &n, vars.file_stream) != -1)
 	{  /* While reading the line is not -1 */
 		line_n++;
-		line = remove_new_line(line);
-		opcode = strtok(line, " ");
+		vars.line = remove_new_line(vars.line);
+		opcode = strtok(vars.line, " ");
 		if (opcode)
 			get_monty_code(&head, opcode, line_n);
 	}
-	fclose(file_stream);
+	free(vars.line);
+	free_list(&head);
+	fclose(vars.file_stream);
 	return (0);
 }

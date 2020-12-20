@@ -25,18 +25,9 @@ void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 {
 	unsigned short int i = 0;
 	instruction_t op[] = {
-		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop_h},
-		{"swap", swap},
-		{"add", added},
-		{"nop", _nope},
-		{"sub", _subs},
-		{"div", divis},
-		{"mul", multi},
-		{"mod", modul},
-		{NULL, NULL}
+		{"push", push}, {"pall", pall},	{"pint", pint},	{"pop", pop_h},
+		{"swap", swap},	{"add", added},	{"nop", _nope},	{"sub", _subs},
+		{"div", divis},	{"mul", multi},	{"mod", modul},	{NULL, NULL}
 	};
 
 	while (op[i].opcode)
@@ -53,6 +44,10 @@ void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 		fprintf(stderr,
 			"\033[31mL%d: unknown instruction %s\033[0m\n",
 			line_n, opcode_s);
+		free(vars.line);
+		fclose(vars.file_stream);
+		if (*head || head)
+			free_list(head);
 		exit(EXIT_FAILURE);
 	}
 }

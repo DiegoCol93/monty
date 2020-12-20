@@ -29,6 +29,10 @@ void divis(stack_t **head, unsigned int line_n)
 		fprintf(stderr,
 			"\033[31mL%d: can't div, stack too short\033[0m\n",
 			line_n);
+		free(vars.line);
+		fclose(vars.file_stream);
+		if (*head || head)
+			free_list(head);
 		exit(EXIT_FAILURE);
 	}
 	if (top->n == 0)
@@ -36,6 +40,10 @@ void divis(stack_t **head, unsigned int line_n)
 		fprintf(stderr,
 			"\033[31mL%d: division by zero\033[0m\n",
 			line_n);
+		free(vars.line);
+		fclose(vars.file_stream);
+		if (*head || head)
+			free_list(head);
 		exit(EXIT_FAILURE);
 	}
 	else

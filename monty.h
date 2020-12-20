@@ -14,8 +14,8 @@
 /**
  * struct stack_s - Doubly linked list representation
  *                  of a stack (or queue).
- *    Elements:
- *       @n:      - Integer.
+ *     Members:
+ *        @n:     - Integer.
  *      @prev:    - Points to the previous element of the stack (or queue).
  *      @next:    - Points to the next element of the stack (or queue).
  *
@@ -33,7 +33,7 @@ typedef struct stack_s
 /**
  * struct instruction_s - Opcode and its function.
  *
- *      Elements:
+ *       Members:
  *       @opcode:       - The opcode.
  *          @f:         - Function to handle the opcode.
  *
@@ -48,7 +48,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*                         Stack handling functions.                         */
+/*                        Memory handling functions.                         */
 /*---------------------------------------------------------------------------*/
 
 /*   push - Pushes a node into memory                                        */
@@ -66,11 +66,15 @@ void pop_h(stack_t **head, unsigned int line_n);
 /*   swap - Swaps the top two elements on the stack.                         */
 void swap(stack_t **head, unsigned int line_n);
 
-/*   added - Adds the top two elements on the stack.                         */
-void added(stack_t **head, unsigned int line_n);
-
 /*   _nope - Does not do anything.                                           */
 void _nope(stack_t **head, unsigned int line_n);
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*                              Math functions.                              */
+/*---------------------------------------------------------------------------*/
+
+/*   added - Adds the top two elements on the stack.                         */
+void added(stack_t **head, unsigned int line_n);
 
 /*   _subs - Substracts the top two elements on the stack.                   */
 void _subs(stack_t **head, unsigned int line_n);
@@ -95,7 +99,33 @@ void get_monty_code(stack_t **head, char *opcode, unsigned int line_n);
 char *remove_new_line(char *line);
 
 /*  check_int - Checks if a string only has numbers.                         */
-int check_int(char *data, unsigned int line_n);
+int check_int(char *data, unsigned int line_n, stack_t **head);
+
+/*   free_list - Frees the whole list.                                       */
+void free_list(stack_t **head);
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*                        Global variables structure.                        */
+/*---------------------------------------------------------------------------*/
+/* - - - - - - - Strcuct 0.                                                  */
+/**
+ * struct vars_s   - Global structure for passing variables,
+ *                   specially for error handling purposes.
+ *
+ *     Members:
+ *  @file_stream:  - Pointer to the file stream.
+ *      @line:     - Pointer to the current line.
+ *
+ *   Descriptions: - Structure for storing variables used
+ *                   when closing on error.
+ */
+typedef struct vars_s
+{
+	FILE *file_stream;
+	char *line;
+} vars_t;
+extern vars_t vars;
+vars_t vars;
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 

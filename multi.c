@@ -29,6 +29,10 @@ void multi(stack_t **head, unsigned int line_n)
 		fprintf(stderr,
 			"\033[31mL%d: can't mul, stack too short\033[0m\n",
 			line_n);
+		free(vars.line);
+		fclose(vars.file_stream);
+		if (*head || head)
+			free_list(head);
 		exit(EXIT_FAILURE);
 	}
 	top->next->n = top->next->n * top->n;

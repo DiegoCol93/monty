@@ -29,6 +29,10 @@ void pint(stack_t **head, unsigned int line_n)
 	{
 		fprintf(stderr, "\033[31mL%d: can't pint, stack empty\033[0m\n",
 			line_n);
+		free(vars.line);
+		fclose(vars.file_stream);
+		if (*head || head)
+			free_list(head);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", top->n);
