@@ -35,7 +35,7 @@ int check_int(char *data, unsigned int line_n, stack_t **head)
 			if (data[i] < '0' || data[i] > '9')
 			{
 				fprintf(stderr,
-					"\033[31mL%d: usage: push integer\033[0m\n",
+					"L%d: usage: push integer\n",
 					line_n);
 				free(vars.line);
 				fclose(vars.file_stream);
