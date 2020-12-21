@@ -19,7 +19,7 @@
  */
 void free_list(stack_t **head)
 {
-	if (head)
+	if (head && *head)
 	{
 		while ((*head)->next)
 		{

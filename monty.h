@@ -69,6 +69,12 @@ void swap(stack_t **head, unsigned int line_n);
 /*   _nope - Does not do anything.                                           */
 void _nope(stack_t **head, unsigned int line_n);
 
+/*   rotl - Rotates the stack 1st to last.                                   */
+void rotl(stack_t **head, unsigned int line_n);
+
+/*   rotr - Rotates the stack 1st to last.                                   */
+void rotr(stack_t **head, unsigned int line_n);
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*                              Math functions.                              */
 /*---------------------------------------------------------------------------*/
@@ -104,9 +110,6 @@ void pstr(stack_t **head, unsigned int line_n);
 
 /*   get_monty_code - Gets the correct function for the opcode.              */
 void get_monty_code(stack_t **head, char *opcode, unsigned int line_n);
-
-/*    remove_new_line - Removes the newline from a string.                   */
-char *remove_new_line(char *line);
 
 /*  check_int - Checks if a string only has numbers.                         */
 int check_int(char *data, unsigned int line_n, stack_t **head);

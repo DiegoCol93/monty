@@ -24,10 +24,13 @@ void pall(stack_t **head, unsigned int line_n)
 	stack_t *top = NULL;
 	(void)line_n;
 
-	top = *head;
-	while (top)
+	if (head && *head)
 	{
-		printf("%d\n", top->n);
-		top = top->next;
+		top = *head;
+		while (top)
+		{
+			printf("%d\n", top->n);
+			top = top->next;
+		}
 	}
 }

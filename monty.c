@@ -22,9 +22,10 @@
  */
 int main(int ac, char **av)
 {
+	char *opcode = NULL, *line = NULL;
 	unsigned int line_n = 0;
 	stack_t *head = NULL;
-	char *opcode = NULL;
+	FILE *f_stream;
 	size_t n;
 
 	vars.file_stream = NULL;
@@ -34,24 +35,30 @@ int main(int ac, char **av)
 		fprintf(stderr, "\033[31mUSAGE: monty file\033[0m\n");
 		exit(EXIT_FAILURE);
 	}
-	vars.file_stream = fopen(av[1], "r"); /* Opens FILE stream. */
-	if (!vars.file_stream)
+	f_stream = fopen(av[1], "r"); /* Opens FILE stream. */
+	if (!f_stream)
 	{
 		fprintf(stderr, "\033[31mError: Can't open file %s\033[0m\n",
 			av[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&vars.line, &n, vars.file_stream) != -1)
+	vars.file_stream = f_stream;
+	while (getline(&line, &n, f_stream) != -1)
 	{  /* While reading the line is not -1 */
 		line_n++;
-		vars.line = remove_new_line(vars.line);
-		opcode = strtok(vars.line, " ");
-		if (opcode[0] == '#')
+		line[strlen(line) - 1] = '\0';
+		vars.line = line;
+		if (!vars.line)
 			continue;
+		opcode = strtok(line, " ");
 		if (opcode)
+		{
+			if (opcode[0] == '#')
+				continue;
 			get_monty_code(&head, opcode, line_n);
+		}
 	}
-	free(vars.line);
+	free(line);
 	free_list(&head);
 	fclose(vars.file_stream);
 	return (0);
