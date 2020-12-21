@@ -32,13 +32,13 @@ int main(int ac, char **av)
 	vars.line = NULL;
 	if (ac != 2) /* If not correct # of args. */
 	{
-		fprintf(stderr, "\033[31mUSAGE: monty file\033[0m\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	f_stream = fopen(av[1], "r"); /* Opens FILE stream. */
 	if (!f_stream)
 	{
-		fprintf(stderr, "\033[31mError: Can't open file %s\033[0m\n",
+		fprintf(stderr, "Error: Can't open file %s\n",
 			av[1]);
 		exit(EXIT_FAILURE);
 	}

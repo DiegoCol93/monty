@@ -32,7 +32,7 @@ void push(stack_t **head, unsigned int line_n)
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
 	{
-		fprintf(stderr, "\033[31mError: malloc failed\033[0m\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(vars.line);
 		fclose(vars.file_stream);
 		if (*head || head)
