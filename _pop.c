@@ -28,7 +28,7 @@ void pop_h(stack_t **head, unsigned int line_n)
 	if (!top)
 	{
 		fprintf(stderr,
-			"\033[31mL%d: can't pop an empty stack\033[0m\n",
+			"L%d: can't pop an empty stack\n",
 			line_n);
 		free(vars.line);
 		fclose(vars.file_stream);
