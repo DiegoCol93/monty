@@ -61,5 +61,5 @@ int main(int ac, char **av)
 	free(line);
 	free_list(&head);
 	fclose(vars.file_stream);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
