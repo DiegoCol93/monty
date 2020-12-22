@@ -19,12 +19,16 @@
  */
 void free_list(stack_t **head)
 {
+	stack_t *tmp = NULL;
+
 	if (head && *head)
 	{
-		while ((*head)->next)
+		tmp = *head;
+		while(*head)
 		{
 			*head = (*head)->next;
-			free((*head)->prev);
+			free(tmp);
+			tmp = *head;
 		}
 		free(*head);
 	}
