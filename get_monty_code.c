@@ -43,7 +43,7 @@ void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 	if (!op[i].opcode)
 	{
 		fprintf(stderr,
-			"L%d: unknown instruction %s",
+			"L%d: unknown instruction %s\n",
 			line_n, opcode_s);
 		free(vars.line);
 		fclose(vars.file_stream);
