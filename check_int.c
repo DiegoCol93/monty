@@ -34,8 +34,7 @@ int check_int(char *data, unsigned int line_n, stack_t **head)
 		{
 			if (data[i] < '0' || data[i] > '9')
 			{
-				fprintf(stderr,
-					"L%d: usage: push integer\n",
+				fprintf(stderr, "L%d: usage: push integer\n",
 					line_n);
 				free(vars.line);
 				fclose(vars.file_stream);
@@ -48,6 +47,6 @@ int check_int(char *data, unsigned int line_n, stack_t **head)
 		ret = atoi(data);
 		return (ret);
 	}
-	fprintf(stderr, "\033[31mL%d: usage: push integer\033[0m\n", line_n);
+	fprintf(stderr, "L%d: usage: push integer\n", line_n);
 	exit(EXIT_FAILURE);
 }
