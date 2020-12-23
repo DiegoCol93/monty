@@ -42,15 +42,13 @@ void push(stack_t **head, unsigned int line_n)
 		if (head)
 		{
 			if (*head)
-			{
-				top = *head;
-				top->prev = new_node;
-			}
+				top = *head, top->prev = new_node;
 			new_node->next = *head;
 			*head = new_node;
 		}
 	if (vars.mode == 1) /* Queue mode. */
 		if (head)
+		{
 			if (*head)
 			{
 				top = *head;
@@ -61,4 +59,5 @@ void push(stack_t **head, unsigned int line_n)
 			}
 			else
 				*head = new_node;
+		}
 }
