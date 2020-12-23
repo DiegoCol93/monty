@@ -27,7 +27,7 @@ void pch(stack_t **head, unsigned int line_n)
 	if (!top)
 	{
 		fprintf(stderr,
-			"\033[31mL%d: can't pchar, stack empty\033[0m\n",
+			"L%d: can't pchar, stack empty\n",
 			line_n);
 		free(vars.line);
 		fclose(vars.file_stream);
@@ -38,7 +38,7 @@ void pch(stack_t **head, unsigned int line_n)
 	if (top->n < 0 || top->n > 127)
 	{
 		fprintf(stderr,
-			"\033[31mL%d: can't pchar, value out of range\033[0m\n",
+			"L%d: can't pchar, value out of range\n",
 			line_n);
 		free(vars.line);
 		fclose(vars.file_stream);
