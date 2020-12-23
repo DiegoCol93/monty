@@ -27,7 +27,7 @@ void multi(stack_t **head, unsigned int line_n)
 	if (!top || !top->next)
 	{
 		fprintf(stderr,
-			"\033[31mL%d: can't mul, stack too short\033[0m\n",
+			"L%d: can't mul, stack too short\n",
 			line_n);
 		free(vars.line);
 		fclose(vars.file_stream);
