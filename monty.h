@@ -132,6 +132,7 @@ void free_list(stack_t **head);
  *                   specially for error handling purposes.
  *
  *     Members:
+ *      @mode:     - Variable for Stack and Queue modes.
  *  @file_stream:  - Pointer to the file stream.
  *      @line:     - Pointer to the current line.
  *

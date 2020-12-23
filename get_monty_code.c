@@ -52,12 +52,22 @@ void get_monty_code(stack_t **head, char *opcode_s, unsigned int line_n)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+ * que - Sets the global mode variable to 1, Queue mode.
+ * @head: UNUSED.
+ * @line_n: UNUSED.
+ */
 void que(stack_t **head, unsigned int line_n)
 {
 	(void)head;
 	(void)line_n;
 	vars.mode = 1;
 }
+/**
+ * stk - Sets the global mode variable to 0, Stack mode.
+ * @head: UNUSED.
+ * @line_n: UNUSED.
+ */
 void stk(stack_t **head, unsigned int line_n)
 {
 	(void)head;
