@@ -31,9 +31,9 @@ void rotr(stack_t **head, unsigned int line_n)
 			while (last->next)
 				last = last->next;
 			last->next = *head;
-			*head = (*head)->next;
-			(*head)->prev->next = NULL;
-			(*head)->prev->prev = last;
-			(*head)->prev = NULL;
+			last->prev->next = NULL;
+			(*head)->prev = last;
+			last->prev = NULL;
+			*head = last;
 		}
 }
