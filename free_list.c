@@ -24,7 +24,7 @@ void free_list(stack_t **head)
 	if (head && *head)
 	{
 		tmp = *head;
-		while(*head)
+		while (*head)
 		{
 			*head = (*head)->next;
 			free(tmp);
