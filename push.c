@@ -55,7 +55,8 @@ void push(stack_t **head, unsigned int line_n)
 				while (top->next)
 					top = top->next;
 				top->next = new_node;
-				top->next->prev = top;
+				new_node->prev = top;
+				new_node->next = NULL;
 			}
 			else
 				*head = new_node;
