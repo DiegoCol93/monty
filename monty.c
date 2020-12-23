@@ -27,9 +27,10 @@ int main(int ac, char **av)
 	stack_t *head = NULL;
 	FILE *f_stream;
 	size_t n;
-
-	vars.file_stream = NULL;
-	vars.line = NULL;
+	/* Global initialization. */
+	vars.file_stream = NULL; /* File stream. */
+	vars.line = NULL; /*Getline  global buffer*/
+	vars.mode = 0; /* Global mode, 0 Stack 1 Queue. */
 	if (ac != 2) /* If not correct # of args. */
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -38,8 +39,7 @@ int main(int ac, char **av)
 	f_stream = fopen(av[1], "r"); /* Opens FILE stream. */
 	if (!f_stream)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n",
-			av[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
 	vars.file_stream = f_stream;

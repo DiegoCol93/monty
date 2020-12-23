@@ -75,8 +75,14 @@ void rotl(stack_t **head, unsigned int line_n);
 /*   rotr - Rotates the stack 1st to last.                                   */
 void rotr(stack_t **head, unsigned int line_n);
 
+/* stack - Sets the list mode to stack.*/
+void stk(stack_t **head, unsigned int line_n);
+
+/* stack - Sets the list mode to queue.*/
+void que(stack_t **head, unsigned int line_n);
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*                              Math functions.                              */
+/*                             Maths functions.                              */
 /*---------------------------------------------------------------------------*/
 
 /*   added - Adds the top two elements on the stack.                         */
@@ -134,6 +140,7 @@ void free_list(stack_t **head);
  */
 typedef struct vars_s
 {
+	unsigned short int mode;
 	FILE *file_stream;
 	char *line;
 } vars_t;
