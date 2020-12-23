@@ -28,7 +28,7 @@ void modul(stack_t **head, unsigned int line_n)
 	if (!top || !top->next)
 	{
 		fprintf(stderr,
-			"\033[31mL%d: can't mod, stack too short\033[0m\n",
+			"L%d: can't mod, stack too short\n",
 			line_n);
 		free(vars.line);
 		fclose(vars.file_stream);
@@ -39,7 +39,7 @@ void modul(stack_t **head, unsigned int line_n)
 	if (top->n == 0)
 	{
 		fprintf(stderr,
-			"\033[31mL%d: division by zero\033[0m\n",
+			"L%d: division by zero\n",
 			line_n);
 		free(vars.line);
 		fclose(vars.file_stream);
